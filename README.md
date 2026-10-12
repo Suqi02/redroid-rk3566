@@ -2,6 +2,10 @@
 
 Docker Compose deployment for redroid on an RK3566 host with Mali-G52 hardware rendering.
 
+## Complete package
+
+The [v1.0.0 Release](https://github.com/Suqi02/redroid-rk3566/releases/tag/v1.0.0) includes `redroid3566-fnos-package.zip` with the original, uncompressed Mali `.so` files. Download that ZIP, extract it, and use the included `docker-compose.yml` and `rk3566-libs` directory.
+
 ## Contents
 
 - `docker-compose.yml` — ARM64 container, port `5555`, `/dev/mali0`, Mali GPU mode
@@ -19,7 +23,7 @@ The image and userspace libraries are ARM64/RK3566 tested.
 
 ## Restore the Mali libraries
 
-GitHub's web uploader limits individual files to 25 MB. The two Mali libraries are therefore stored as `rk3566-libs/*.so.gz`. After downloading or cloning the repository, run:
+The repository also keeps web-upload-compatible copies as `rk3566-libs/*.so.gz`. If you download the repository itself instead of the Release ZIP, run:
 
 ```sh
 sh install-libs.sh
