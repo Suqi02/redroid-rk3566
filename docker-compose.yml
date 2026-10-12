@@ -1,0 +1,24 @@
+services:
+  redroid3566:
+    image: iceblacktea/redroid-arm64:12.0.0-250116
+    platform: linux/arm64
+    container_name: redroid3566
+    privileged: true
+    restart: unless-stopped
+    ports:
+      - "5555:5555"
+    volumes:
+      - redroid3566_data:/data
+      - ./rk3566-libs/libGLES_mali-arm64.so:/vendor/lib64/egl/libGLES_mali.so:ro
+      - ./rk3566-libs/libGLES_mali-arm.so:/vendor/lib/egl/libGLES_mali.so:ro
+    devices:
+      - /dev/mali0:/dev/mali0
+    command:
+      - androidboot.hardware=redroid
+      - androidboot.redroid_width=720
+      - androidboot.redroid_height=1280
+      - androidboot.redroid_dpi=320
+      - androidboot.redroid_gpu_mode=mali
+
+volumes:
+  redroid3566_data:
