@@ -22,7 +22,7 @@ The image and userspace libraries are ARM64/RK3566 tested.
 GitHub's web uploader limits individual files to 25 MB. The two Mali libraries are therefore stored as `rk3566-libs/*.so.gz`. After downloading or cloning the repository, run:
 
 ```sh
-./install-libs.sh
+sh install-libs.sh
 ```
 
 This restores `libGLES_mali-arm.so` and `libGLES_mali-arm64.so` beside their archives. Then deploy the Compose project.
